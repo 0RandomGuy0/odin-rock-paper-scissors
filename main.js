@@ -1,6 +1,4 @@
-for(let i = 1; i < 10; i++){
-    console.log(getComputerChoice());
-}
+console.log(getHumanChoice());
 
 function getComputerChoice(){
     //Gets a number between 0 and 2
@@ -12,4 +10,8 @@ function getComputerChoice(){
         return "paper";
     }
     return "scissors";
+}
+
+function getHumanChoice(){
+    return prompt("Enter rock, paper, or scissor.");
 }
