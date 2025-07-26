@@ -68,10 +68,29 @@ function playRound(humanChoice, computerChoice){
 
     console.log("You chose " + hChoice + ".");
     console.log("Computer chose " + computerChoice + ".");
-    console.log("You " + outcome + "!");
+    console.log("You " + outcome + " this round!");
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame(){
+    for (let i = 0; i < 5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
 
-playRound(humanSelection,computerSelection);
+        playRound(humanSelection,computerSelection);
+    }
+
+    if (humanScore < computerScore){
+        console.log("You lost the game! You had a score of " + humanScore 
+        + " and the Computer had a score of " + computerScore + ".")
+    }
+    else if (humanScore > computerScore){
+        console.log("You win the game! You had a score of " + humanScore 
+        + " and the Computer had a score of " + computerScore + ".")
+    }
+    else{
+        console.log("It's a draw! You had a score of " + humanScore 
+        + " and the Computer had a score of " + computerScore + ".")
+    }
+}
+
+playGame();
