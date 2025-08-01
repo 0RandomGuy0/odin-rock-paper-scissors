@@ -62,13 +62,13 @@ function playRound(humanChoice, computerChoice){
     }
     else if(outcome === "lose"){
         computerScore++;
-    }
-    displayScore();
+    }    
     resultMsg.innerHTML = `
         <strong>Your choice:</strong> ${hChoice}<br>
         <strong>Computer's choice:</strong> ${computerChoice}<br>
         <strong>Result:</strong> You ${outcome} this round!
     `;
+    displayScore();
 }
 
 function playGame(){
@@ -110,5 +110,16 @@ scissorBtn.addEventListener("click",() => {
 });
 
 function displayScore() {
+    if (humanScore === 5){
+        resultMsg.innerHTML = `<strong>Congratulations!</strong><br> 
+        You won the game with a score of ${humanScore} 
+        against the computer's ${computerScore}.`;
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5) {
+        resultMsg.innerHTML = '<strong>Game Over!</strong>';
+        humanScore = 0;
+        computerScore = 0;
+    }
     scoreDisplay.textContent = humanScore + "   -   " + computerScore;
 }
