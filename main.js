@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+const resultMsg = document.querySelector(".result");
 
 function getComputerChoice(){
     let choice = Math.floor(Math.random(3) * 3);
@@ -66,9 +67,11 @@ function playRound(humanChoice, computerChoice){
         computerScore++;
     }
 
-    console.log("You chose " + hChoice + ".");
-    console.log("Computer chose " + computerChoice + ".");
-    console.log("You " + outcome + " this round!");
+    resultMsg.innerHTML = `
+        <strong>Your choice:</strong> ${hChoice}<br>
+        <strong>Computer's choice:</strong> ${computerChoice}<br>
+        <strong>Result:</strong> You ${outcome} this round!
+    `;
 }
 
 function playGame(){
