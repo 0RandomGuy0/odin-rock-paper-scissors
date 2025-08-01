@@ -13,11 +13,6 @@ function getComputerChoice(){
     return "scissor";
 }
 
-//Function assumes valid input
-function getHumanChoice(){
-    return prompt("Enter rock, paper, or scissor.");
-}
-
 function playRound(humanChoice, computerChoice){
     const hChoice = humanChoice.toLowerCase();
     let outcome = "";
