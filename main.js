@@ -93,4 +93,18 @@ function playGame(){
     }
 }
 
-playGame();
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorBtn = document.querySelector(".scissor");
+
+rockBtn.addEventListener("click",() => {
+    playRound("rock", getComputerChoice());
+});
+
+paperBtn.addEventListener("click",() => {
+    playRound("paper", getComputerChoice());
+});
+
+scissorBtn.addEventListener("click",() => {
+    playRound("scissor", getComputerChoice());
+});
