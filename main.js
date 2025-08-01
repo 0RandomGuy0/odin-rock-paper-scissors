@@ -71,28 +71,6 @@ function playRound(humanChoice, computerChoice){
     displayScore();
 }
 
-function playGame(){
-    for (let i = 0; i < 5; i++){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-
-        playRound(humanSelection,computerSelection);
-    }
-
-    if (humanScore < computerScore){
-        console.log("You lost the game! You had a score of " + humanScore 
-        + " and the Computer had a score of " + computerScore + ".")
-    }
-    else if (humanScore > computerScore){
-        console.log("You win the game! You had a score of " + humanScore 
-        + " and the Computer had a score of " + computerScore + ".")
-    }
-    else{
-        console.log("It's a draw! You had a score of " + humanScore 
-        + " and the Computer had a score of " + computerScore + ".")
-    }
-}
-
 const rockBtn = document.querySelector(".rock");
 const paperBtn = document.querySelector(".paper");
 const scissorBtn = document.querySelector(".scissor");
