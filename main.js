@@ -1,6 +1,8 @@
 let humanScore = 0;
 let computerScore = 0;
 const resultMsg = document.querySelector(".result");
+const scoreDisplay = document.querySelector(".score");
+displayScore();
 
 function getComputerChoice(){
     let choice = Math.floor(Math.random(3) * 3);
@@ -61,7 +63,7 @@ function playRound(humanChoice, computerChoice){
     else if(outcome === "lose"){
         computerScore++;
     }
-
+    displayScore();
     resultMsg.innerHTML = `
         <strong>Your choice:</strong> ${hChoice}<br>
         <strong>Computer's choice:</strong> ${computerChoice}<br>
@@ -106,3 +108,7 @@ paperBtn.addEventListener("click",() => {
 scissorBtn.addEventListener("click",() => {
     playRound("scissor", getComputerChoice());
 });
+
+function displayScore() {
+    scoreDisplay.textContent = humanScore + "   -   " + computerScore;
+}
